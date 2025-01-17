@@ -16,7 +16,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        
+        let vc = RMTabBarController() //let vc be the one and only viewcontroller we have. Command + click -> Go to definition and see that we set backround color to Red. Also note that RMTabBarController is the same name as the Class in the RMTabBarController.swift file located under Controllers/Core. We now have a beige tab bar at the bottom
+        
+        let window = UIWindow(windowScene: windowScene)
+        
+        window.rootViewController = vc //Which window should show at startup. not the splash screen but the main app screen.
+        window.makeKeyAndVisible()
+        
+        self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
