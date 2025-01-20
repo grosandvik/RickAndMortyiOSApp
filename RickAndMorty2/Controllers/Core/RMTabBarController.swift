@@ -10,6 +10,7 @@ import UIKit
 //Default classname = ViewController, default container UIViewController
 //Final class means that it can not be sub-classed
 
+/// Controller to house tabs and root tab controllers
 final class RMTabBarController: UITabBarController{
 
     override func viewDidLoad() {
